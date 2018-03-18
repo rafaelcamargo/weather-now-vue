@@ -1,0 +1,48 @@
+{
+  "index": {
+    "source": {
+      "file": "src/index.html"
+    },
+    "dist": {
+      "root": "dist"
+    }
+  },
+  "scripts": {
+    "source": {
+      "root": "src/scripts/",
+      "files": "src/scripts/**/*.js",
+      "entry": "src/scripts/index.js"
+    },
+    "dist": {
+      "root": "dist",
+      "filename": {
+        "prod": "[name]-[hash].js",
+        "dev": "[name].js"
+      }
+    }
+  },
+  "styles": {
+    "source": {
+      "root": "src/styles/"
+    },
+    "dist": {
+      "filename": {
+        "prod": "[name]-[hash].css",
+        "dev": "[name].css"
+      }
+    }
+  },
+  "images": {
+    "source": {
+      "files": "src/images/**/*.*"
+    },
+    "dist": {
+      "root": "images/[name].[ext]"
+    }
+  },
+  "environments": {
+    "source": {
+      "root": "environments"
+    }
+  }
+}

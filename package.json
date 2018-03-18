@@ -1,0 +1,52 @@
+{
+  "name": "nashios-web",
+  "version": "0.1.1",
+  "description": "Discover the people behind the products you love.",
+  "main": "./src/scripts/app.js",
+  "scripts": {
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "./node_modules/jest/bin/jest.js"
+  },
+  "author": "Rafael Camargo <hello@rafaelcamargo.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "ggrid": "^1.0.0",
+    "moment": "^2.21.0",
+    "vue": "^2.5.13",
+    "vue-router": "^2.8.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^23.0.0-alpha.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "copy-webpack-plugin": "^4.4.2",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-loader": "^0.5.5",
+    "html-loader-jest": "^0.2.1",
+    "html-webpack-plugin": "^2.30.1",
+    "install": "^0.10.4",
+    "jasmine": "^2.8.0",
+    "jest": "^22.4.2",
+    "jsdom": "^11.5.1",
+    "lodash": "^4.17.5",
+    "npm": "^5.6.0",
+    "style-loader": "^0.20.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-template-compiler": "^2.5.13",
+    "vue-template-loader": "^0.4.0",
+    "vue-test-utils": "^1.0.0-beta.11",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-stream": "^3.2.0",
+    "yargs": "^8.0.2"
+  },
+  "engines": {
+    "node": "8.2.1",
+    "npm": "5.6.0"
+  }
+}

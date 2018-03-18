@@ -1,0 +1,56 @@
+@require '_variables'
+
+background-image($filename, $path = $path-images)
+  background-image url($path + $filename + '?v=@@fingerprint')
+
+border-radius($radius)
+  -webkit-border-radius $radius
+  -moz-border-radius    $radius
+  border-radius         $radius
+
+box-sizing($size)
+  -webkit-box-sizing $size
+  -moz-box-sizing    $size
+  box-sizing         $size
+
+clearfix()
+  zoom 1
+  &:after
+    content " "
+    display table
+    clear both
+
+logo-size($width, $height)
+  width $width
+  height $height
+  background-size $width $height
+
+transform($property)
+  -webkit-transform unquote($property)
+  -moz-transform unquote($property)
+  -ms-transform unquote($property)
+  -o-transform unquote($property)
+  transform unquote($property)
+
+breakpoint($size)
+  if($size == 'xs')
+    @media screen and (max-width $screen-xs-max)
+      {block}
+  else if ($size == 'xs-sm')
+    @media screen and (max-width $screen-sm-max)
+      {block}
+  else if ($size == 'sm')
+    @media screen and (min-width $screen-xs-max) and (max-width $screen-sm-max)
+      {block}
+  else if ($size == 'sm-md')
+    @media screen and (min-width $screen-sm-min) and (max-width $screen-md-max)
+      {block}
+  else if ($size == 'md')
+    @media screen and (min-width $screen-sm-max) and (max-width $screen-md-max)
+      {block}
+  else if ($size == 'md-lg')
+    @media screen and (min-width $screen-md-max) and (max-width $screen-lg-min)
+      {block}
+  else if ($size == 'lg')
+    @media screen and (min-width $screen-lg-min)
+      {block}
