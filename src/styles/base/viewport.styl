@@ -1,0 +1,38 @@
+@require '../_variables'
+@require '../_mixins'
+
+$viewport-width = 100%
+
+.viewport-container
+  height 100%
+
+.viewport
+  position relative
+  padding 55px 20px 0
+  height 100%
+  box-sizing(border-box)
+  .topbar
+    position fixed
+    top 0
+    left 0
+    right 0
+    z-index $layer-low
+
+.viewport-content
+  position relative
+  padding 50px 0
+  width $viewport-width
+  min-height 100%
+  box-sizing(border-box)
+  clearfix()
+
++breakpoint('xs')
+  .viewport-container
+    height auto
+
+  .viewport
+    height auto
+
+  .viewport-content
+    padding 30px 0
+    min-height 0
