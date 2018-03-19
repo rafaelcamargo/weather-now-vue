@@ -4,5 +4,6 @@ export default {
   name: 'topbar',
   data(){
     return {}
-  }
+  },
+  template
 };
