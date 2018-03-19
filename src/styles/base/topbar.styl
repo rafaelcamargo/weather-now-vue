@@ -1,0 +1,20 @@
+@require '../_variables'
+@require '../_mixins'
+@require 'viewport'
+
+.topbar
+  background-color $color-lightest
+  border-bottom 1px solid $color-grey-semi-light
+
+.topbar-content
+  position relative
+  padding 15px 0
+  width $viewport-width
+  margin 0 auto
+  clearfix()
+  .logo
+    position relative
+    top 0
+    left 50%
+    logo-size(158px, 24px)
+    transform('translate(-50%,0)')
