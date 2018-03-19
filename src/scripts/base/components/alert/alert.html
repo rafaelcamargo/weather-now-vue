@@ -1,4 +1,4 @@
-<div class="alert" :class="classes">
+<div v-if="alert" class="alert" :class="classes">
   <span>{{ alert.message }}</span>
   <button v-if="alert.retryAction" @click="retry">Try Again</button>
 </div>
