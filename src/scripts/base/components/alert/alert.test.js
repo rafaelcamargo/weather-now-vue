@@ -56,4 +56,13 @@ describe('Alert', () => {
     });
     expect(wrapper.contains('button')).toBe(false);
   });
+
+  it('should remove alert id alert object is destroyed', () => {
+    const wrapper = mount(alert, {
+      propsData: propsDataMock
+    });
+    wrapper.vm.alert = null;
+    wrapper.update();
+    expect(wrapper.contains('.alert')).toBe(false);
+  });
 });
