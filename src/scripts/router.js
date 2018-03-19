@@ -1,5 +1,6 @@
 import Vue from '@vue';
 import VueRouter from 'vue-router';
+import analyticsService from '@scripts/base/services/analytics';
 import weather from '@scripts/weather/views/weather.js';
 
 Vue.use(VueRouter);
@@ -9,7 +10,7 @@ const router = new VueRouter({
     {
       name: 'home',
       path: '/',
-      redirect: '/weather'
+      redirect: 'weather'
     },
     {
       name: 'weather',
@@ -17,6 +18,10 @@ const router = new VueRouter({
       component: weather
     }
   ]
+});
+
+router.afterEach(to => {
+  analyticsService.trackPageView(to.path);
 });
 
 export default router;
