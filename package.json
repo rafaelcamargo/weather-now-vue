@@ -1,8 +1,8 @@
 {
-  "name": "nashios-web",
-  "version": "0.1.1",
-  "description": "Discover the people behind the products you love.",
-  "main": "./src/scripts/app.js",
+  "name": "weather-now-vue",
+  "version": "0.1.0",
+  "description": "A simple weather app written in VueJS",
+  "main": "./src/scripts/index.js",
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
@@ -12,7 +12,6 @@
   "license": "UNLICENSED",
   "dependencies": {
     "axios": "^0.17.1",
-    "ggrid": "^1.0.0",
     "moment": "^2.21.0",
     "vue": "^2.5.13",
     "vue-router": "^2.8.1"
