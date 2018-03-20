@@ -7,7 +7,7 @@
     :refresh="true"
     :refresh-interval="600000">
     <div class="weather-card-body">
-      <span class="weather-card-temperature" :class="temperatureCssClass">
+      <span v-if="weather" class="weather-card-temperature" :class="temperatureCssClass">
         {{ weather.temperature }}
       </span>
     </div>
@@ -18,7 +18,7 @@
           label="Humidity"
           size="6"
           css-class="weather-card-footer-humidity-row-item">
-          <span class="weather-card-humidity">
+          <span v-if="weather" class="weather-card-humidity">
             {{ weather.humidity }}
           </span>
           <span class="weather-card-footer-units">%</span>
@@ -28,7 +28,7 @@
           label="Pressure"
           size="6"
           css-class="weather-card-footer-pressure-row-item">
-          <span class="weather-card-pressure">
+          <span v-if="weather" class="weather-card-pressure">
             {{ weather.pressure }}
           </span>
           <span class="weather-card-footer-units">hPa</span>
@@ -36,8 +36,8 @@
       </row>
       <row>
         <row-item size="12">
-          <div class="weather-card-last-update-container">
-            Updated at <span>{{ weather.updatedAt.string }}</span>
+          <div v-if="weather" class="weather-card-last-update-container">
+            Updated at <span>{{ weather.updatedAt.timeString }}</span>
           </div>
         </row-item>
       </row>

@@ -1,4 +1,4 @@
-import { mount } from 'vue-test-utils';
+import { shallow } from 'vue-test-utils';
 import weatherService from '@scripts/weather/services/weather';
 import weatherCard from './weather-card';
 
@@ -9,7 +9,10 @@ describe('Weather Card', () => {
 
   function mockWeather(){
     weatherMock = {
-      temperature: 23
+      temperature: 23,
+      updatedAt: {
+        timeString: '12:00:00 AM'
+      }
     };
   }
 
@@ -24,7 +27,7 @@ describe('Weather Card', () => {
     spyOn(weatherService, 'get');
     mockPropsData();
     mockWeather();
-    wrapper = mount(weatherCard, {propsData: propsDataMock});
+    wrapper = shallow(weatherCard, {propsData: propsDataMock});
   });
 
   it('should config title on initialize', () => {
