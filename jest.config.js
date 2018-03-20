@@ -20,6 +20,7 @@ module.exports = {
     '@scripts\/(.*)$': `<rootDir>/${project.scripts.source.root}$1`,
     '@styles\/(.*)$': `<rootDir>/${project.styles.source.root}$1`
   },
+  "setupTestFrameworkScriptFile": "<rootDir>/jest.config.vue.js",
   "transform": {
     "^.+\\.(css|styl)$": "<rootDir>/src/mocks/stylesMock.js",
     "^.+\\.js$": "babel-jest",
