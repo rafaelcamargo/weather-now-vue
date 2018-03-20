@@ -1,20 +1,17 @@
-import ENV from '@environment';
 import axios from 'axios';
 
 const _public = {};
 
-_public.get = (uri, query) => {
+_public.get = (url, query) => {
   return request({
-    uri: uri,
+    url: url,
     method: 'get',
     query: query
   });
 };
 
 function request(args){
-  const params = getParams(args);
-  const url = `${ENV.BASE_API_URL}/${args.uri}`;
-  return axios[args.method](url, params);
+  return axios[args.method](args.url, getParams(args));
 }
 
 function getParams(args){
