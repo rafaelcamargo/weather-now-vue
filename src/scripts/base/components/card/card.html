@@ -1,0 +1,10 @@
+<div class="card">
+  <div v-if="title" class="card-title">
+    {{ title }}
+  </div>
+  <div class="card-content">
+    <alert :alert="alert"></alert>
+    <loader v-if="shouldShowLoader"></loader>
+    <slot v-show="shouldShowContent"></slot>
+  </div>
+</div>
