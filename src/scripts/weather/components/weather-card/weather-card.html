@@ -1,0 +1,46 @@
+<div class="weather-card">
+  <card
+    :title="title"
+    :alert.sync="alert"
+    :fetch="fetch"
+    :fetch-success="fetchSuccess"
+    :refresh="true"
+    :refresh-interval="600000">
+    <div class="weather-card-body">
+      <span class="weather-card-temperature" :class="temperatureCssClass">
+        {{ weather.temperature }}
+      </span>
+    </div>
+    <div class="weather-card-footer">
+      <row>
+        <row-item
+          v-if="showHumidity"
+          label="Humidity"
+          size="6"
+          css-class="weather-card-footer-humidity-row-item">
+          <span class="weather-card-humidity">
+            {{ weather.humidity }}
+          </span>
+          <span class="weather-card-footer-units">%</span>
+        </row-item>
+        <row-item
+          v-if="showPressure"
+          label="Pressure"
+          size="6"
+          css-class="weather-card-footer-pressure-row-item">
+          <span class="weather-card-pressure">
+            {{ weather.pressure }}
+          </span>
+          <span class="weather-card-footer-units">hPa</span>
+        </row-item>
+      </row>
+      <row>
+        <row-item size="12">
+          <div class="weather-card-last-update-container">
+            Updated at <span>{{ weather.updatedAt.string }}</span>
+          </div>
+        </row-item>
+      </row>
+    </div>
+  </card>
+</div>

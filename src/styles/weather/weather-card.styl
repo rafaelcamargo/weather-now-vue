@@ -1,0 +1,58 @@
+@require '../_variables'
+
+$weather-card-padding = 15px
+
+.weather-card
+  text-align center
+  .card
+    padding $weather-card-padding
+  .card-content
+    margin 0
+    min-height 178px - $weather-card-padding
+  .card-title
+    margin 0 $weather-card-padding * -1
+    padding 0 0 $weather-card-padding
+    font-size $font-size-md
+    border-bottom 1px solid $color-grey-semi-light
+  .row-item-label
+    text-transform uppercase
+  .row-item
+    display block
+
+.weather-card-body
+  padding 25px 0 35px
+
+.weather-card-temperature
+  position relative
+  color $color-orange
+  font-size 5.75rem
+  line-height 1
+  &:after
+    position absolute
+    content 'º'
+    top 18px
+    right -12px
+    font-size 2rem
+  &.weather-card-temperature-cold
+    color $color-blue
+  &.weather-card-temperature-hot
+    color $color-red
+
+.weather-card-footer
+  margin $weather-card-padding * -1
+  padding $weather-card-padding
+  background-color alpha($color-grey-light, .5)
+  .row
+  & + .row
+    margin-top 0
+
+.weather-card-footer-humidity-row-item,
+.weather-card-footer-pressure-row-item
+  margin-bottom 10px
+
+.weather-card-footer-units
+  font-size $font-size-xxs
+
+.weather-card-last-update-container
+  color $color-grey-semi-dark
+  font-size $font-size-xxxs
