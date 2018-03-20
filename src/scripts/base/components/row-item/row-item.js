@@ -1,3 +1,4 @@
+import '@styles/base/row-item.styl';
 import template from './row-item.html'
 
 export default {
