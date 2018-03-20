@@ -5,6 +5,8 @@
   <div class="card-content">
     <alert :alert="alert"></alert>
     <loader v-if="shouldShowLoader"></loader>
-    <slot v-show="shouldShowContent"></slot>
+    <div v-show="shouldShowContent">
+      <slot></slot>
+    </div>
   </div>
 </div>
