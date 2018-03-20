@@ -40,14 +40,14 @@ describe('Analytics Service', () => {
     expect(document.head.appendChild).toHaveBeenCalledWith(jasmine.any(Object));
   });
 
-  xit('should configure analytics settings after append script tag on head', () => {
+  it('should configure analytics settings after append script tag on head', () => {
     window.location.hash = locationHashMock;
     analyticsService.init();
     expect(window.dataLayer[0][0]).toEqual('js');
     expect(window.dataLayer[0][1]).toEqual(dateMock);
-    expect(window.dataLayer[0][0]).toEqual('config');
-    expect(window.dataLayer[0][1]).toEqual(ENV.GOOGLE_ANALYTICS.ID);
-    expect(window.dataLayer[0][2]).toEqual({page_path: '/products'});
+    expect(window.dataLayer[1][0]).toEqual('config');
+    expect(window.dataLayer[1][1]).toEqual(ENV.GOOGLE_ANALYTICS.ID);
+    expect(window.dataLayer[1][2]).toEqual({page_path: '/products'});
   });
 
   it('should track page view', () => {

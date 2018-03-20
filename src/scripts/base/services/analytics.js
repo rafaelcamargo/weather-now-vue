@@ -1,4 +1,5 @@
 import ENV from '@environment';
+import dateService from '@scripts/base/services/date';
 
 const ANALYTICS_BASE_URL = 'https://www.googletagmanager.com/gtag/js';
 const ANALYTICS_ID = ENV.GOOGLE_ANALYTICS.ID;
@@ -22,7 +23,7 @@ function buildAnalyticsScriptTag(id){
 
 function configAnalytics(id, path){
   if(!path)
-    gtag('js', new Date());
+    gtag('js', dateService.getNow());
   gtag('config', id, {page_path: (path || getLocationPath())});
 }
 
