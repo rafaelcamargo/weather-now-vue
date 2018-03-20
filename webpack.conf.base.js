@@ -17,7 +17,10 @@ module.exports = {
       test: /\.(styl|css)$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: ['css-loader', 'stylus-loader']
+        use: [
+          { loader: 'css-loader', options: { minimize: true } },
+          'stylus-loader'
+        ]
       })
     }, {
       test: /\.html$/,
@@ -39,7 +42,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: project.index.source.file
+      template: project.index.source.file,
+      minify: {
+        collapseWhitespace: true
+      }
     }),
     new CopyWebpackPlugin([{
       from: project.images.source.files,
