@@ -38,3 +38,8 @@ The app will be running on `http://localhost:7000` and the browser will automati
 ``` bash
 npm run test
 ```
+
+2. You can optionally generate coverage report after running tests:
+``` bash
+npm run test -- --coverage
+```

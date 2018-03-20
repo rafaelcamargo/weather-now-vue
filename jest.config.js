@@ -4,7 +4,7 @@ const fs = require('fs'),
   env = argv.env || 'development';
 
 module.exports = {
-  "collectCoverageFrom": [project.scripts.source.files],
+  "collectCoverageFrom": [project.tests.source.files],
   "coverageReporters": ["html"],
   "coverageThreshold": {
     "global": {

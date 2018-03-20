@@ -40,6 +40,11 @@
       "root": "images/[name].[ext]"
     }
   },
+  "tests": {
+    "source": {
+      "files": "src/scripts/**/!(index|router).js"
+    }
+  },
   "environments": {
     "source": {
       "root": "environments"
