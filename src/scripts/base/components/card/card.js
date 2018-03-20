@@ -1,3 +1,4 @@
+import '@styles/base/card.styl';
 import alert from '@scripts/base/components/alert/alert';
 import loader from '@scripts/base/components/loader/loader';
 import template from './card.html';
@@ -59,10 +60,10 @@ export default {
       this.shouldShowContent = shouldShow;
     },
     setAlert(theme, message, retryAction){
-      this.alert = {theme, message, retryAction};
+      this.$emit('update:alert', {theme, message, retryAction});
     },
     clearAlert(){
-      this.alert = null;
+      this.$emit('update:alert', null);
     },
     setLoaderVisibility(shouldShowLoader){
       this.shouldShowLoader = shouldShowLoader;

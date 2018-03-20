@@ -50,9 +50,9 @@ describe('Card', () => {
   it('should clear alert on fetch data', () => {
     const vm = createComponent();
     stubFetchAction(vm, 'success');
-    vm.alert = {some: 'alert'};
+    spyOn(vm, '$emit');
     vm.$mount();
-    expect(vm.alert).toEqual(null);
+    expect(vm.$emit).toHaveBeenCalledWith('update:alert', null)
   });
 
   it('should show loader on fetch data', () => {
@@ -80,8 +80,9 @@ describe('Card', () => {
   it('should show alert error on fetch data error', () => {
     const vm = createComponent();
     stubFetchAction(vm, 'error');
+    spyOn(vm, '$emit');
     vm.$mount();
-    expect(vm.alert).toEqual({
+    expect(vm.$emit).toHaveBeenCalledWith('update:alert', {
       theme: 'error',
       message: 'Something went wrong',
       retryAction: vm.fetchData
