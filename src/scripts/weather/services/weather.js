@@ -29,12 +29,12 @@ function onGetWeatherSuccess(response, city, countryCode){
 function parseWeatherResponse(response){
   const date = dateService.getNow();
   return {
-    temperature: parseInt(response.main.temp),
-    humidity: response.main.humidity,
-    pressure: response.main.pressure,
+    temperature: parseInt(response.data.main.temp),
+    humidity: response.data.main.humidity,
+    pressure: response.data.main.pressure,
     updatedAt: {
       time: date.getTime(),
-      string: dateService.format(date, 'hh:mm:ss A')
+      timeString: dateService.format(date, 'hh:mm:ss A')
     }
   };
 }

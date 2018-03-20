@@ -16,17 +16,19 @@ describe('Weather Service', () => {
       pressure: 1046,
       updatedAt: {
         time: updatedAtMock.getTime(),
-        string: '12:00:00 AM'
+        timeString: '12:00:00 AM'
       }
     };
   }
 
   function mockWeather(){
     weatherMock = {
-      main: {
-        temp: 23,
-        humidity: 85,
-        pressure: 1046
+      data: {
+        main: {
+          temp: 23,
+          humidity: 85,
+          pressure: 1046
+        }
       }
     };
   }
@@ -84,7 +86,7 @@ describe('Weather Service', () => {
       pressure: 1046,
       updatedAt: {
         time: new Date(2018, 2, 14, 0, 10).getTime(),
-        string: '12:10:00 AM'
+        timeString: '12:10:00 AM'
       }
     });
   });
