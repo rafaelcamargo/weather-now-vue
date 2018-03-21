@@ -29,6 +29,7 @@ jobs:
 
       - run:
           name: Deploy
+          command: chmod +x ./.circleci/deploy.sh
           command: ./.circleci/deploy.sh
 
       - save_cache:
