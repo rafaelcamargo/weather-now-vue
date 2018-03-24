@@ -30,6 +30,9 @@ export default {
     if(this.refresh)
       this.setRefreshInterval(this.refreshInterval);
   },
+  updated(){
+    this.configContentVisibility();
+  },
   beforeDestroy(){
     this.clearRefreshInterval();
   },
