@@ -1,6 +1,8 @@
 # Weather Now
 A simple weather app written in VueJS
 
+[![CircleCI](https://circleci.com/gh/rafaelcamargo/weather-now-vue.svg?style=svg&circle-token=cf9a6e956ab3caac31cc23303a6a0b1bd6929247)](https://circleci.com/gh/rafaelcamargo/weather-now-vue)
+
 ## Contributing
 
 1. Install [Node](https://nodejs.org/en/). Download the "Recommend for Most Users" version.
