@@ -1,16 +1,16 @@
 import { mount } from 'vue-test-utils';
 import alert from './alert'
 
-describe('Alert', () => {
+fdescribe('Alert', () => {
   let propsDataMock;
 
   function mockPropsData(){
     propsDataMock = {
       alert: {
+        theme: 'error',
         message: 'some message!',
         retryAction: jasmine.createSpy()
-      },
-      theme: 'error'
+      }
     };
   }
 
@@ -18,20 +18,18 @@ describe('Alert', () => {
     mockPropsData();
   });
 
-  it('should render some themed alert', () => {
+  it('should render some theme', () => {
     const wrapper = mount(alert, {
       propsData: propsDataMock
     });
-    expect(wrapper.classes().length).toEqual(2);
-    expect(wrapper.classes()[0]).toEqual('alert');
-    expect(wrapper.classes()[1]).toEqual('alert-error');
+    expect(wrapper.vm.themeCssClass).toEqual('alert-error');
   });
 
-  it('should show some alert message', () => {
+  it('should show some message', () => {
     const wrapper = mount(alert, {
       propsData: propsDataMock
     });
-    expect(wrapper.find('span').text()).toEqual('some message!');
+    expect(wrapper.find('.alert-message').text()).toEqual('some message!');
   });
 
   it('should render retry button if retry custom action was passed', () => {
@@ -57,7 +55,7 @@ describe('Alert', () => {
     expect(wrapper.contains('button')).toBe(false);
   });
 
-  it('should remove alert id alert object is destroyed', () => {
+  it('should remove alert if alert object is destroyed', () => {
     const wrapper = mount(alert, {
       propsData: propsDataMock
     });
