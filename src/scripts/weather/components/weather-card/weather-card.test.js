@@ -34,6 +34,20 @@ describe('Weather Card', () => {
     expect(wrapper.vm.title).toEqual('Joinville, BR');
   });
 
+  it('should show humidity and pressure footer row if whether show humidity or show pressure prop is passed as true', () => {
+    propsDataMock.showHumidity = true;
+    wrapper = shallow(weatherCard, {propsData: propsDataMock});
+    expect(wrapper.vm.shouldShowHumidityPressureFooterRow).toEqual(true);
+    delete propsDataMock.showHumidity;
+    propsDataMock.showPressure = true;
+    wrapper = shallow(weatherCard, {propsData: propsDataMock});
+    expect(wrapper.vm.shouldShowHumidityPressureFooterRow).toEqual(true);
+  });
+
+  it('should hide humidity and pressure footer row if niether show humidity or show pressure prop is passed as true', () => {
+    expect(wrapper.vm.shouldShowHumidityPressureFooterRow).toBeFalsy();
+  });
+
   it('should fetch', () => {
     wrapper.vm.fetch();
     expect(weatherService.get).toHaveBeenCalledWith('joinville', 'br');

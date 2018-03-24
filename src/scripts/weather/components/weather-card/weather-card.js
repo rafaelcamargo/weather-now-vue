@@ -23,11 +23,13 @@ export default {
       alert: null,
       title: null,
       weather: null,
-      temperatureCssClass: null
+      temperatureCssClass: null,
+      shouldShowHumidityPressureFooterRow: null
     }
   },
   mounted(){
     this.configTitle();
+    this.configHumidityPressureFooterRowVisibility();
   },
   methods: {
     fetch(){
@@ -69,6 +71,13 @@ export default {
     },
     setTemperatureCssClass(cssClass){
       this.temperatureCssClass = cssClass;
+    },
+    configHumidityPressureFooterRowVisibility(){
+      const shouldShow = this.showHumidity || this.showPressure;
+      this.setHumidityPressureFooterRowVisibility(shouldShow);
+    },
+    setHumidityPressureFooterRowVisibility(shouldShow){
+      this.shouldShowHumidityPressureFooterRow = shouldShow;
     }
   },
   template
