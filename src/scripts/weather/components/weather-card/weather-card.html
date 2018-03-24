@@ -12,7 +12,7 @@
       </span>
     </div>
     <div class="weather-card-footer">
-      <row>
+      <row v-if="shouldShowHumidityPressureFooterRow">
         <row-item
           v-if="showHumidity"
           label="Humidity"
