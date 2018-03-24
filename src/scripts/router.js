@@ -6,6 +6,7 @@ import weather from '@scripts/weather/views/weather.js';
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     {
       name: 'home',
