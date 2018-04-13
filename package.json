@@ -40,6 +40,7 @@
     "vue-template-loader": "^0.4.0",
     "vue-test-utils": "^1.0.0-beta.11",
     "webpack": "^3.10.0",
+    "webpack-dashboard": "^1.1.1",
     "webpack-dev-server": "^2.11.1",
     "webpack-stream": "^3.2.0",
     "yargs": "^8.0.2"
