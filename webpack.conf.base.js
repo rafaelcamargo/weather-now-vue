@@ -4,7 +4,6 @@ const fs = require('fs'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   CopyWebpackPlugin = require('copy-webpack-plugin'),
   ExtractTextPlugin = require("extract-text-webpack-plugin"),
-  DashboardPlugin = require('webpack-dashboard/plugin'),
   project = JSON.parse(fs.readFileSync('./project.json', 'utf8')),
   env = argv.env || 'development';
 
@@ -56,7 +55,6 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(env)
       }
-    }),
-    new DashboardPlugin()
+    })
   ]
 }
