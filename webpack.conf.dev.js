@@ -1,6 +1,7 @@
 const fs = require('fs'),
   webpack = require('webpack'),
   ExtractTextPlugin = require("extract-text-webpack-plugin"),
+  DashboardPlugin = require('webpack-dashboard/plugin'),
   project = JSON.parse(fs.readFileSync('./project.json', 'utf8'));
 
 module.exports = {
@@ -11,7 +12,8 @@ module.exports = {
   plugins: [
     new webpack.SourceMapDevToolPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin(project.styles.dist.filename.dev)
+    new ExtractTextPlugin(project.styles.dist.filename.dev),
+    new DashboardPlugin()
   ],
   devServer: {
     hot: true,
