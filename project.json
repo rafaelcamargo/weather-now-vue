@@ -42,7 +42,10 @@
   },
   "tests": {
     "source": {
-      "files": "src/scripts/**/!(index|router).js"
+      "files": [
+        "src/scripts/**/!(index|router).js",
+        "!src/scripts/base/mocks/**/*.js"
+      ]
     }
   },
   "environments": {

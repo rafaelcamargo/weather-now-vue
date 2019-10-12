@@ -4,7 +4,7 @@ const fs = require('fs'),
   env = argv.env || 'development';
 
 module.exports = {
-  "collectCoverageFrom": [project.tests.source.files],
+  "collectCoverageFrom": project.tests.source.files,
   "coverageReporters": ["html"],
   "coverageThreshold": {
     "global": {
@@ -20,9 +20,9 @@ module.exports = {
     '@scripts\/(.*)$': `<rootDir>/${project.scripts.source.root}$1`,
     '@styles\/(.*)$': `<rootDir>/${project.styles.source.root}$1`
   },
-  "setupTestFrameworkScriptFile": "<rootDir>/jest.config.vue.js",
+  "setupTestFrameworkScriptFile": "<rootDir>/src/scripts/base/mocks/global.js",
   "transform": {
-    "^.+\\.(css|styl)$": "<rootDir>/src/mocks/stylesMock.js",
+    "^.+\\.(css|styl)$": "<rootDir>/src/scripts/base/mocks/raw-files.js",
     "^.+\\.js$": "babel-jest",
     "^.+\\.html$": "html-loader-jest"
   }

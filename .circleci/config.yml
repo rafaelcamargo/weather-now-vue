@@ -24,10 +24,6 @@ jobs:
           command: npm run test -- --coverage --coverageReporters=text
 
       - run:
-          name: Node dependencies
-          command: npm install firebase-tools --unsafe-perm
-
-      - run:
           name: Deploy
           command: ./.circleci/deploy.sh
 
