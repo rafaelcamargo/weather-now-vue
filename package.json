@@ -4,9 +4,10 @@
   "description": "A simple weather app written in VueJS",
   "main": "./src/scripts/index.js",
   "scripts": {
-    "build": "./node_modules/webpack/bin/webpack.js",
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "./node_modules/jest/bin/jest.js"
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "test": "jest",
+    "deploy": "firebase deploy --non-interactive"
   },
   "author": "Rafael Camargo <hello@rafaelcamargo.com>",
   "license": "UNLICENSED",
@@ -45,9 +46,5 @@
     "webpack-dev-server": "^2.11.1",
     "webpack-stream": "^3.2.0",
     "yargs": "^8.0.2"
-  },
-  "engines": {
-    "node": "8.2.1",
-    "npm": "5.6.0"
   }
 }
